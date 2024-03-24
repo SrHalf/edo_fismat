@@ -1,0 +1,68 @@
+<TelaInicial>:
+    orientation: "vertical"
+    AccordionItem:
+        title: "CRESCIMENTO SEM LIMITES"
+        BoxLayout:
+            orientation: "vertical"
+            Label:
+                text_size: self.size
+                text: "Esta simulação demonstra um crescimento sem limites. Defina os parâmetros e clique em Iniciar."
+            GridLayout:
+                rows: 3
+                cols: 2
+                Label:
+                    text: "População Inicial (P):"
+                TextInput:
+                    id:p_inicial
+                    multiline: False
+                    text: "5000"
+                Label:
+                    text: "Taxa (r):"
+                TextInput:
+                    id:constante_r
+                    multiline: False
+                    text: "0.213"
+            Button:
+                text: "Iniciar"
+                on_release: root.iniciar_slimite(p_inicial, constante_r)
+
+
+    AccordionItem:
+        title: "CRESC. COM CAPACIDADE DE CARGA AMBIENTE"
+        BoxLayout:
+            orientation: "vertical"
+            Label:
+                text_size: self.size
+                text: "Quando o ambiente possui uma capacidade máxima, o crescimento populacional alcança um limite."
+            GridLayout:
+                rows: 3
+                cols: 2
+                Label:
+                    text: "População Inicial (P):"
+                TextInput:
+                    id: p_inicial_k
+                    multiline: False
+                    text: "5000"
+                Label:
+                    text: "Taxa (r):"
+                TextInput:
+                    id: taxa_r_k
+                    multiline: False
+                    text: "0.213"
+                Label:
+                    text: "Capacidade de Carga (K):"
+                TextInput:
+                    id: capacidade
+                    multiline: False
+                    text: "25000"
+            Button:
+                text: "Iniciar"
+                on_release: root.iniciar_k(p_inicial_k, taxa_r_k, capacidade)
+
+    AccordionItem:
+        title: "PREDADOR-PRESA"
+        BoxLayout:
+            orientation: "vertical"
+            Label:
+                text_size: self.size
+                text: "No sistema predador-presa (Lotka-Volterra), vemos o crescimento de duas populações em função do tempo, porém confrontadas entre si, ou seja, uma representa limitação direta para a outra."
