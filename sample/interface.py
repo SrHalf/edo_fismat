@@ -17,6 +17,9 @@ class TelaInicial(Accordion):
     def iniciar_k(self, p0, taxa, capacidade):
         simulador.simular_sistema_k(float(p0.text), float(taxa.text), float(capacidade.text), 200)
 
+    def iniciar_predador_presa(self):
+        simulador.simular_sistema_predador_presa()
+
 
 class SimuladorApp(App):
     def build(self):
